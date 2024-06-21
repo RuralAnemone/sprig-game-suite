@@ -12,6 +12,15 @@ const head = "O"
 const body = "o"
 const apple = "*"
 
+/**
+ * Snake
+ * 
+ * an array of coordinates `[x,y]` that determine the snake's position.
+ * 
+ * snake[0] is the snake's head; subsequent elements are the following body parts.
+ * 
+ * snake.length is the current score.
+ */
 let snake = [[]]
 
 setLegend(
