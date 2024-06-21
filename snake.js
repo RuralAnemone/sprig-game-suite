@@ -111,7 +111,7 @@ afterInput(async () => {
   updateSnake();
   setFruit();
 
-  await wait(50);
+  await wait(500);
 })
 
 async function wait(time) {
@@ -121,5 +121,5 @@ async function wait(time) {
 }
 
 function updateSnake() {
-  
+  getFirst(head).y += 1;
 }
