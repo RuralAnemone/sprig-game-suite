@@ -107,10 +107,18 @@ setMap(levels[level])
 //   getFirst(player).y += 1
 // })
 
-afterInput(() => {
+afterInput(async () => {
   updateSnake();
   setFruit();
+
+  await wait(50);
 })
+
+async function wait(time) {
+  return new Promise((res, _rej) => {
+    setTimeout(res, time);
+  });
+}
 
 function updateSnake() {
   
