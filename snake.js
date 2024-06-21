@@ -13,7 +13,7 @@ const body = "o"
 const apple = "*"
 
 /**
- * Snake
+ * `snake`
  * 
  * an array of coordinates `[x,y]` that determine the snake's position.
  * 
@@ -22,6 +22,17 @@ const apple = "*"
  * snake.length is the current score.
  */
 let snake = [[3,1],[2,1],[1,1]]
+
+/**
+ * `direction`
+ * 
+ * a tuple representing the snake head's direction
+ * 
+ * $\abs{x} \oplus \abs{y} = 1$; $\left\{ \ \left\{ x,y \right\} \subset \mathbb{Z} \ \ | \ -1 \leq x \leq 1 \ \ \& \ \ -1 \leq y \leq 1 \ \right\}$
+ * 
+ * if you don't speak latex, x and y are either -1, 0, or 1; one of them has to be 0 and one of them has to be either -1 or 1
+ */
+let direction = [1,0];
 
 setLegend(
   [ head, bitmap`
