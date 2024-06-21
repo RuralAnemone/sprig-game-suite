@@ -21,7 +21,7 @@ const apple = "*"
  * 
  * snake.length is the current score.
  */
-let snake = [[]]
+let snake = [[3,1],[2,1],[1,1]]
 
 setLegend(
   [ head, bitmap`
