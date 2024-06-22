@@ -198,4 +198,5 @@ function checkCanMove(potentialDirection) {
 function updateSnake() {
   // if (checkCollisions()) die();
   snake[0] = vec2Add(snake[0], direction);
+  [getFirst(head).y, getFirst(head).x] = snake[0];
 }
