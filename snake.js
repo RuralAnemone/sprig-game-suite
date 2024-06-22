@@ -169,10 +169,10 @@ function vec2Add(v, u) {
 }
 
 function checkCanMove(potentialDirection) {
-  return JSON.stringify(snake.slice(1)).includes(JSON.stringify([snake[0][0] + potentialDirection[0], snake[0][1] + potentialDirection[1]]));
+  return JSON.stringify(snake.slice(1)).includes(JSON.stringify(vec2Add(snake[0], potentialDirection)));
 }
 
 function updateSnake() {
   if (checkCollisions()) die();
-  snake[0] =
+  snake[0] = vec2Add(snake[0], direction);
 }
