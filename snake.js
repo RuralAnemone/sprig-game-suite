@@ -11,6 +11,7 @@ https://sprig.hackclub.com/gallery/getting_started
 const head = "O"
 const body = "o"
 const apple = "*"
+const dead = " "
 
 /**
  * `snake`
@@ -133,9 +134,22 @@ setMap(levels[level])
 //   [ player ]: []
 // })
 
-// onInput("s", () => {
-//   getFirst(player).y += 1
-// })
+onInput("w", () => {
+  const potentialDirection = [0, -1];
+  if (checkCanMove(potentialDirection)) direction = potentialDirection;})
+
+onInput("a", () => {
+  const potentialDirection = [-1, 0];
+  if (checkCanMove(potentialDirection)) direction = potentialDirection;})
+
+onInput("s", () => {
+  const potentialDirection = [0, 1];
+  if (checkCanMove(potentialDirection)) direction = potentialDirection;})
+
+onInput("d", () => {
+  const potentialDirection = [1, 0];
+  if (checkCanMove(potentialDirection)) direction = potentialDirection;
+})
 
 afterInput(async () => {
   updateSnake();
@@ -150,7 +164,15 @@ async function wait(time) {
   });
 }
 
+function vec2Add(v, u) {
+  return [v[0] + u[0], v[1] + u[1]];
+}
+
+function checkCanMove(potentialDirection) {
+  return JSON.stringify(snake.slice(1)).includes(JSON.stringify([snake[0][0] + potentialDirection[0], snake[0][1] + potentialDirection[1]]));
+}
+
 function updateSnake() {
   if (checkCollisions()) die();
-  
+  snake[0] =
 }
